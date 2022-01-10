@@ -1,13 +1,15 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-// Create your User Model
-// must include google id
-const userSchema = new mongoose.Schema({
-    name: String, 
-    email: String, 
+const userSchema = new mongoose.Schema(
+  {
+    name: String,
+    email: String,
     googleId: String,
-}, {
-    timestamps: true
-});
+  },
+  {
+    timestamps: true,
+  }
+);
 
-mongoose.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);

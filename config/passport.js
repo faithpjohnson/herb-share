@@ -15,6 +15,7 @@ passport.use(new GoogleStrategy({
     // search database to see if user exists
     // if the user does exist, 
     // take the ID that was found and store it in the cookie
+    console.log(profile, "<---Profile");
     User.findOne({ googleId: profile.id }, function (err, userDoc) {
       if (err) return cb(err); // if there's an error proceed to the next middleware function
 
