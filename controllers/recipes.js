@@ -4,6 +4,7 @@ module.exports = {
   index,
   new: newRecipe,
   create,
+  show,
 };
 
 function index(req, res) {
@@ -29,5 +30,16 @@ function create(req, res) {
     console.log(recipeDocument, "<recipeDocument");
 
     res.redirect("/recipes");
+  });
+}
+
+function show(req, res) {
+  console.log(req.params, "<-- req.params in the show route");
+
+  Recipe.findById(req.params.id, function (err, recipeDocument) {
+    res.render("recipes/show", {
+      title: "Recipe Detail",
+      recipe: recipeDocument,
+    });
   });
 }

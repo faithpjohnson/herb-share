@@ -1,6 +1,25 @@
-<%- include('partials/header') %>
+<%- include('../partials/header') %>
 <div class="container">
-<h1>added recipe</h1>
+  <h2>Recipe Details</h2>
+  <div>Title:</div>
+  <div><%= recipe.title %></div>
+  <div>Description:</div>
+  <div><%= recipe.description %></div>
+  <div>Ingredients:</div>
+  <div><%= recipe.ingredients %></div>
+  <div>Instructions:</div>
+  <div><%= recipe.instructions %></div>
 
+  <br /><br />
+  <h4>Comments</h4>
+  <form
+    id="add-comment-form"
+    method="POST"
+    action="/recipes/<%= recipe._id %>/comments"
+  >
+    <label>Comments:</label>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Comment" />
+  </form>
 </div>
-<%- include('partials/footer') %>
+<%- include('../partials/footer') %>

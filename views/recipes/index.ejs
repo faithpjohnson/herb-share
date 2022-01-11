@@ -1,9 +1,12 @@
 <%- include('../partials/header') %>
 <div class="container">
-  <h1 id="all-recipes">All Recipes</h1>
+  <h2 id="all-recipes">All Recipes</h2>
   <div class="row">
     <% recipes.forEach(function(r){ %>
-        <div class="col s12 m6 l4"><%= r.title %></div>
+    <div class="col s12 m6 l4">
+      <%= r.title %>
+      <a href="/recipes/<%= r._id %>">DETAILS</a>
+    </div>
     <% }) %>
   </div>
 </div>
