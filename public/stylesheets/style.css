@@ -1,10 +1,25 @@
-
-body{
-  background-color: #5B8266;
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
 }
 
-h1{
-  font-family: 'Kalam', cursive;
+body{
+  background-color: #D7D9D7;
+  padding: 50px;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main";
+}
+
+nav .brand-logo {
+  padding: 0 40px;
+  left: 0;
+  transform: translateX(0);
 }
 
 #all-recipes{

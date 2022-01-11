@@ -26,24 +26,43 @@
   </head>
   <body>
     <nav>
-      <h1>Recipe Share</h1>
-      <a href="/recipes/new">ADD RECIPES</a>
-      <a href="/recipes">ALL RECIPES</a>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Recipe Share</a>
 
-      <!-- Add login UI here -->
-      <ul class="right">
-        <li>
-          <% if (user) { %>
-          <a href="/logout"
-            ><i class="material-icons left">trending_flat</i>Log Out</a
-          >
-          <% } else { %>
-          <a href="/auth/google"
-            ><i class="material-icons left">vpn_key</i>Login with Google</a
-          >
-          <% } %>
-        </li>
-      </ul>
+
+        <ul id="nav-mobile" class="right">
+          <li><a href="/recipes/new">ADD RECIPES</a></li>
+          <li><a href="/recipes">ALL RECIPES</a></li>
+          <li>
+            <% if (user) { %>
+            <a href="/logout"
+              ><i class="material-icons left">trending_flat</i>Log Out</a
+            >
+            <% } else { %>
+            <a href="/auth/google"
+              ><i class="material-icons left">vpn_key</i>Login with Google</a
+            >
+            <% } %>
+          </li>
+        </ul>
+        
+        
+
+        <!-- Add login UI here -->
+        <!-- <ul class="right">
+          <li>
+            <% if (user) { %>
+            <a href="/logout"
+              ><i class="material-icons left">trending_flat</i>Log Out</a
+            >
+            <% } else { %>
+            <a href="/auth/google"
+              ><i class="material-icons left">vpn_key</i>Login with Google</a
+            >
+            <% } %>
+          </li>
+        </ul> -->
+      </div>
     </nav>
   </body>
 </html>
