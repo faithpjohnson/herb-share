@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google Icon Fonts used by Materialize -->
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Materialize CSS Framework -->
     <link
       rel="stylesheet"
@@ -18,20 +25,25 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Recipe Share</h1>
-    <!-- Add login UI here -->
-    <ul class="right">
-      <li>
-        <% if (user) { %>
-        <a href="/logout"
-          ><i class="material-icons left">trending_flat</i>Log Out</a
-        >
-        <% } else { %>
-        <a href="/auth/google"
-          ><i class="material-icons left">vpn_key</i>Login with Google</a
-        >
-        <% } %>
-      </li>
-    </ul>
+    <nav>
+      <h1>Recipe Share</h1>
+      <a href="/recipes/new">ADD RECIPES</a>
+      <a href="/recipes">ALL RECIPES</a>
+
+      <!-- Add login UI here -->
+      <ul class="right">
+        <li>
+          <% if (user) { %>
+          <a href="/logout"
+            ><i class="material-icons left">trending_flat</i>Log Out</a
+          >
+          <% } else { %>
+          <a href="/auth/google"
+            ><i class="material-icons left">vpn_key</i>Login with Google</a
+          >
+          <% } %>
+        </li>
+      </ul>
+    </nav>
   </body>
 </html>

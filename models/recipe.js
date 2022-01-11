@@ -26,6 +26,10 @@ const recipeSchema = new Schema(
       type: String,
       required: true,
     },
+    instructions: { 
+      type: String, 
+      required: true,
+    },
     date: {
       type: Date,
       default: Date.now,

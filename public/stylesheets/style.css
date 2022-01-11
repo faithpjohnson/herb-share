@@ -1,9 +1,12 @@
 
-
 body{
   background-color: #5B8266;
 }
 
 h1{
   font-family: 'Kalam', cursive;
+}
+
+#all-recipes{
+  text-align: center;
 }
