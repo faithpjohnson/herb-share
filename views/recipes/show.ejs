@@ -21,5 +21,26 @@
     <textarea name="content"></textarea>
     <input type="submit" value="Add Comment" />
   </form>
+  <% if (recipe.comments.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% recipe.comments.forEach(function(c) { %>
+          <tr>
+            <td><%= c.userName %></td>
+            <td><%= c.content %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Comments Yet</h5>
+  <% } %>
+
 </div>
 <%- include('../partials/footer') %>

@@ -5,6 +5,7 @@ module.exports = {
   new: newRecipe,
   create,
   show,
+  createComment,
 };
 
 function index(req, res) {
@@ -19,18 +20,20 @@ function index(req, res) {
 }
 
 function newRecipe(req, res) {
+  console.log(req.user);
   res.render("recipes/new", { title: "Recipes New" });
 }
 
 function create(req, res) {
   // log to see what user filled out
   console.log(req.body);
+  
 
   Recipe.create(req.body, function (err, recipeDocument) {
     console.log(recipeDocument, "<recipeDocument");
 
-    res.redirect("/recipes");
-  });
+    res.redirect('/recipes');
+  })
 }
 
 function show(req, res) {
@@ -42,4 +45,20 @@ function show(req, res) {
       recipe: recipeDocument,
     });
   });
+}
+
+
+function createComment(req, res){
+  console.log(req.params.id);
+  console.log(req.body);
+  Recipe.findById(req.params.id, function(err, recipe){
+      // update req.body to contain user info
+      // req.body.userId = req.user._id;
+      // req.body.userName = req.user.name;
+      // add comment 
+      recipe.comments.push(req.body);
+      recipe.save(function(err){
+          res.redirect(`/recipes/${recipe._id}`);
+      })
+  })
 }
