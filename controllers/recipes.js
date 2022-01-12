@@ -6,6 +6,7 @@ module.exports = {
   create,
   show,
   createComment,
+  edit,
 };
 
 function index(req, res) {
@@ -25,11 +26,13 @@ function newRecipe(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user._id;
   // log to see what user filled out
   console.log(req.body);
 
   Recipe.create(req.body, function (err, recipeDocument) {
     console.log(recipeDocument, "<recipeDocument");
+    console.log(err, "<errrrrDocument");
 
     res.redirect("/recipes");
   });
@@ -70,5 +73,21 @@ function createComment(req, res) {
     recipe.save(function (err) {
       res.redirect(`/recipes/${recipe._id}`);
     });
+  });
+}
+
+function edit(req, res){
+  const arguments = {
+    _id: req.params.id, 
+    // owner: req.user._id
+  }
+  console.log("Args:", arguments);
+
+  Recipe.findOne(arguments, function(err, recipe){
+    if(err || !recipe) {
+    console.log(err, recipe, "this is the error")
+    return res.redirect('/recipes');
+  }
+    res.render('recipes/edit', {recipe});
   });
 }

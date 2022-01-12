@@ -10,6 +10,8 @@
   <div>Instructions:</div>
   <div><%= recipe.instructions %></div>
 
+
+ 
   <br /><br />
   <h4>Comments</h4>
   <form
@@ -22,25 +24,27 @@
     <input type="submit" value="Add Comment" />
   </form>
   <% if (recipe.comments.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>Username</th>
-          <th>Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% recipe.comments.forEach(function(c) { %>
-          <tr>
-            <td><%= c.user.name %></td>
-            <td><%= c.content %></td>
-          </tr>
-        <% }); %>
-      </tbody>
-    </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% recipe.comments.forEach(function(c) { %>
+      <tr>
+        <td>
+          <% if (c.user) { %> <%= c.user.name %> <% } else { %> Anonymous <% }
+          %>
+        </td>
+        <td><%= c.content %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
   <% } else { %>
-    <h5>No Comments Yet</h5>
+  <h5>No Comments Yet</h5>
   <% } %>
- 
 </div>
 <%- include('../partials/footer') %>

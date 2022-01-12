@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
   content: String,
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  user: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: "User",
+  },
   date: {
     type: Date,
     default: Date.now,
@@ -12,7 +15,11 @@ const commentSchema = new Schema({
 
 const recipeSchema = new Schema(
   {
-    owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    owner: { 
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: "User",
+      required: true, 
+    },
     title: {
       type: String,
       required: true,

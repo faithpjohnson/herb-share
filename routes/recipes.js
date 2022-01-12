@@ -8,5 +8,6 @@ router.get("/new", recipesCtrl.new);
 router.get("/:id", recipesCtrl.show);
 router.post("/", recipesCtrl.create);
 router.post("/:id/comments",isLoggedIn, recipesCtrl.createComment);
+router.get("/:id/edit", isLoggedIn, recipesCtrl.edit);
 
 module.exports = router;
