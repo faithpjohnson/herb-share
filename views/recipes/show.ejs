@@ -32,7 +32,7 @@
       <tbody>
         <% recipe.comments.forEach(function(c) { %>
           <tr>
-            <td><%= c.userName %></td>
+            <td><%= c.user.name %></td>
             <td><%= c.content %></td>
           </tr>
         <% }); %>
@@ -41,6 +41,6 @@
   <% } else { %>
     <h5>No Comments Yet</h5>
   <% } %>
-
+ 
 </div>
 <%- include('../partials/footer') %>
