@@ -76,7 +76,7 @@ function createComment(req, res) {
 function edit(req, res){
   const arguments = {
     _id: req.params.id, 
-    // owner: req.user._id
+    owner: req.user._id
   }
   console.log("Args:", arguments);
 
@@ -113,9 +113,8 @@ function update(req, res){
 }
 
 function deleteRecipe(req, res){
-  Recipe.findOneAndDelete(
-    {_id: req.params.id}, function(err){
-      res.redirect('/recipes');
-    }
-  );
+console.log("delete meeee", req.params.id)
+  Recipe.findByIdAndDelete(req.params.id, function(err){
+    res.redirect('/recipes');
+  });
 }

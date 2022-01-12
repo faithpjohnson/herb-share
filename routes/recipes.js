@@ -10,6 +10,6 @@ router.post("/", recipesCtrl.create);
 router.post("/:id/comments",isLoggedIn, recipesCtrl.createComment);
 router.get("/:id/edit", isLoggedIn, recipesCtrl.edit);
 router.post("/:id", isLoggedIn, recipesCtrl.update);
-router.post("/:id/delete", isLoggedIn, recipesCtrl.delete);
+router.delete("/:id", isLoggedIn, recipesCtrl.delete);
 
 module.exports = router;
