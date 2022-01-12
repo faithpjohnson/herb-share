@@ -38,6 +38,10 @@
       <input type="submit" value="Update Recipe" />
     </div>
   </form>
+  <form action="/recipes/<%= recipe._id %>/delete" method="POST"></form>
+  <% if (recipe.owner._id.equals(user && user._id)) { %> 
+    <a class="btn" href="/recipes">Delete Recipe</a>
+<% } %> 
 </div>
 
 <%- include('../partials/footer') %>

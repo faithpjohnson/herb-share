@@ -8,6 +8,7 @@ module.exports = {
   createComment,
   edit,
   update,
+  delete: deleteRecipe,
 };
 
 function index(req, res) {
@@ -94,7 +95,10 @@ function edit(req, res){
 function update(req, res){
   console.log("i'm updating")
   Recipe.findOneAndUpdate(
-    {_id: req.params.id}, 
+    {
+      _id: req.params.id,
+      owner: req.user._id
+    }, 
     req.body,
     {new: true}, 
     function(err, recipe){
@@ -104,6 +108,14 @@ function update(req, res){
         
       }
       res.redirect(`/recipes/${recipe._id}`);
+    }
+  );
+}
+
+function deleteRecipe(req, res){
+  Recipe.findOneAndDelete(
+    {_id: req.params.id}, function(err){
+      res.redirect('/recipes');
     }
   );
 }
