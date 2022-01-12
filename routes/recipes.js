@@ -9,5 +9,6 @@ router.get("/:id", recipesCtrl.show);
 router.post("/", recipesCtrl.create);
 router.post("/:id/comments",isLoggedIn, recipesCtrl.createComment);
 router.get("/:id/edit", isLoggedIn, recipesCtrl.edit);
+router.post("/:id", isLoggedIn, recipesCtrl.update);
 
 module.exports = router;

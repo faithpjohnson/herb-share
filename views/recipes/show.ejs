@@ -10,7 +10,11 @@
   <div>Instructions:</div>
   <div><%= recipe.instructions %></div>
 
-
+<!-- if the owner.id === current user-->
+  <% if (recipe.owner._id.equals(user && user._id))  { %> 
+    <a class="btn" href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a>
+    <!-- <button type="submit" class="btn">Edit Recipe</button> -->
+    <% } %> 
  
   <br /><br />
   <h4>Comments</h4>
@@ -21,7 +25,8 @@
   >
     <label>Comments:</label>
     <textarea name="content"></textarea>
-    <input type="submit" value="Add Comment" />
+    <button type="submit" class="btn">Add Comment</button>
+    <!-- <input type="submit" value="Add Comment" /> -->
   </form>
   <% if (recipe.comments.length) { %>
   <table>
