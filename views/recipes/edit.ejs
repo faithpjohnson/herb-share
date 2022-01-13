@@ -2,8 +2,11 @@
 
 <div class="container">
   <h2>Edit Recipe: <%= recipe.title %></h2>
-
+  <div class="card blue-grey darken-1">
+    <div class="card-content white-text">
   <form class="row" action="/recipes/<%= recipe._id %> " method="POST">
+
+
     <div class="input-field col s6">
       <input
         value="<%= recipe.title %>"
@@ -44,7 +47,10 @@
     <button class="delete btn" type="submit">delete recipe</button>
     </form>
 <% } %> 
+
 </form>
+</div>
+</div>
 </div>
 
 <%- include('../partials/footer') %>
