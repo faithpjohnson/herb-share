@@ -73,48 +73,47 @@ function createComment(req, res) {
   });
 }
 
-function edit(req, res){
+function edit(req, res) {
   const arguments = {
-    _id: req.params.id, 
-    owner: req.user._id
-  }
+    _id: req.params.id,
+    owner: req.user._id,
+  };
   console.log("Args:", arguments);
 
-  Recipe.findOne(arguments, function(err, recipe){
-    if(err || !recipe) {
-    console.log(err, recipe, "this is the error")
-    return res.redirect('/recipes');
-  }
-    res.render('recipes/edit', {
-      title: 'Edit Recipe', 
-      recipe
+  Recipe.findOne(arguments, function (err, recipe) {
+    if (err || !recipe) {
+      console.log(err, recipe, "this is the error");
+      return res.redirect("/recipes");
+    }
+    res.render("recipes/edit", {
+      title: "Edit Recipe",
+      recipe,
     });
   });
 }
 
-function update(req, res){
-  console.log("i'm updating")
+function update(req, res) {
+  console.log("i'm updating");
   Recipe.findOneAndUpdate(
     {
       _id: req.params.id,
-      owner: req.user._id
-    }, 
+      owner: req.user._id,
+    },
     req.body,
-    {new: true}, 
-    function(err, recipe){
-      if(err || !recipe) {
+    { new: true },
+    function (err, recipe) {
+      if (err || !recipe) {
         console.log("Error", err);
-        return res.redirect('/recipes');
-        
+        return res.redirect("/recipes");
       }
       res.redirect(`/recipes/${recipe._id}`);
     }
   );
 }
 
-function deleteRecipe(req, res){
-console.log("delete meeee", req.params.id)
-  Recipe.findByIdAndDelete(req.params.id, function(err){
-    res.redirect('/recipes');
+function deleteRecipe(req, res) {
+  console.log("delete meeee", req.params.id);
+  Recipe.findByIdAndDelete(req.params.id, function (err) {
+    res.redirect("/recipes");
   });
 }

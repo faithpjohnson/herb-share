@@ -2,44 +2,45 @@
 <div class="container">
   <h2>Add a New Recipe</h2>
 
-  <form class="row" action="/recipes" method="POST">
-    <div class="input-field col s6">
-      <input
-        placeholder="Name of Recipe"
-        name="title"
-        type="text"
-        class="validate"
-      />
-      <label for="recipe_name">Name of Recipe:</label>
-    </div>
+  <div class="card blue-grey darken-1">
+    <div class="card-content white-text">
+      <form class="row" action="/recipes" method="POST">
+        <div class="input-field col s6">
+          <input
+            placeholder="Name of Recipe"
+            name="title"
+            type="text"
+            class="validate"
+          />
+          <label for="recipe_name">Name of Recipe:</label>
+        </div>
 
-    <div class="input-field col s12">
-      <input
-        placeholder="Description of Recipe"
-        name="description"
-        type="text"
-        class="validate"
-      />
-      <label for="description">Description of Recipe:</label>
-    </div>
+        <div class="input-field col s12">
+          <input
+            placeholder="Description of Recipe"
+            name="description"
+            type="text"
+            class="validate"
+          />
+          <label for="description">Description of Recipe:</label>
+        </div>
 
-    <div class="input-field col s12">
-      <textarea name="ingredients" class="materialize-textarea"></textarea>
-      <label for="ingredients">Ingredients:</label>
-    </div>
+        <div class="input-field col s12">
+          <textarea name="ingredients" class="materialize-textarea"></textarea>
+          <label for="ingredients">Ingredients:</label>
+        </div>
 
-    <div class="input-field col s12">
-      <textarea name="instructions" class="materialize-textarea"></textarea>
-      <label for="instructions">Instructions:</label>
-    </div>
+        <div class="input-field col s12">
+          <textarea name="instructions" class="materialize-textarea"></textarea>
+          <label for="instructions">Instructions:</label>
+        </div>
 
-    <div class="input-field col s12">
-        <!-- <input type="submit" value="Add Recipe" /> -->
-        <button type="submit" class="btn">Add Recipe</button>
+        <div class="input-field col s12">
+          <button type="submit" class="btn">Add Recipe</button>
+        </div>
+      </form>
     </div>
-
-    
-  </form>
+  </div>
 </div>
 
 <%- include('../partials/footer') %>

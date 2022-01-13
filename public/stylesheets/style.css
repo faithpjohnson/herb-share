@@ -1,27 +1,41 @@
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
-  color: #424748;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-body{
-  background-color: #D7D9D7;
-  padding: 50px;
-  margin: 0;
-  height: 100vh;
-  /* display: grid;
-  grid-template-rows: 50px 1fr;
-  grid-template-areas:
-    "nav"
-    "main"; */
+body {
+  background-image: url("https://i.imgur.com/ZDBopT0.jpg");
+  /* background-image: url("https://i.imgur.com/crcbFFz.jpg"); */
+  /* background-image: url("https://i.imgur.com/cKsYlk0.jpg"); */
+  background-position: center bottom;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* height: 1000px; */
 }
 
-nav .brand-logo {
-  padding: 0 40px;
-  left: 0;
-  transform: translateX(0);
+body > .container {
+  margin-bottom: 200px;
 }
 
-#all-recipes{
-  text-align: center;
+footer.page-footer {
+  margin-top: 80px;
+  background: rgba(237,239,236,0.5);
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+nav
+{
+	overflow: visible;
+}
+nav li a {
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
 }
