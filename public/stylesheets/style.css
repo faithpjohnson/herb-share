@@ -14,22 +14,6 @@ body {
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-body > .container {
-  margin-bottom: 200px;
-}
-
-footer.page-footer {
-  margin-top: 70px;
-  background: rgba(237, 239, 236, 0.8);
-}
-
-.page-footer {
-  padding-top: 0;
-}
-
-body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -39,12 +23,17 @@ main {
   flex: 1 0 auto;
 }
 
-nav {
-  overflow: visible;
+.card {
+  border-radius: 15px;
 }
 
-.card{
-  border-radius: 15px;
+footer.page-footer {
+  margin-top: 70px;
+  background: rgba(237, 239, 236, 0.8);
+}
+
+.page-footer {
+  padding-top: 0;
 }
 
 nav li a {

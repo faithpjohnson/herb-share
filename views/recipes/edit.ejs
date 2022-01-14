@@ -4,48 +4,46 @@
   <h2>Edit Recipe: <%= recipe.title %></h2>
   <div class="card blue-grey darken-1">
     <div class="card-content white-text">
-  <form class="row" action="/recipes/<%= recipe._id %> " method="POST">
+      <form class="row" action="/recipes/<%= recipe._id %> " method="POST">
+        <div class="input-field col s6">
+        <input
+          value="<%= recipe.title %>"
+          name="title"
+          type="text"
+          class="validate"
+        />
+        <label for="recipe_name">Name of Recipe:</label>
+        </div>
 
-    <div class="input-field col s6">
-      <input
-        value="<%= recipe.title %>"
-        name="title"
-        type="text"
-        class="validate"
-      />
-      <label for="recipe_name">Name of Recipe:</label>
-    </div>
+        <div class="input-field col s12">
+          <input
+            value="<%= recipe.description %>"
+            name="description"
+            type="text"
+            class="validate"
+          />
+        <label for="description">Description of Recipe:</label>
+        </div>  
 
-    <div class="input-field col s12">
-      <input
-        value="<%= recipe.description %>"
-        name="description"
-        type="text"
-        class="validate"
-      />
-      <label for="description">Description of Recipe:</label>
-    </div>
+        <div class="input-field col s12">
+          <textarea name="ingredients" class="materialize-textarea"><%= recipe.ingredients %></textarea>
+          <label for="ingredients">Ingredients:</label>
+        </div>
 
-    <div class="input-field col s12">
-      <textarea name="ingredients" class="materialize-textarea"><%= recipe.ingredients %></textarea>
-      <label for="ingredients">Ingredients:</label>
-    </div>
+        <div class="input-field col s12">
+          <textarea name="instructions" class="materialize-textarea"><%= recipe.instructions %></textarea>
+          <label for="instructions">Instructions:</label>
+        </div>
 
-    <div class="input-field col s12">
-      <textarea name="instructions" class="materialize-textarea"><%= recipe.instructions %></textarea>
-      <label for="instructions">Instructions:</label>
-    </div>
-
-    <div class="input-field col s12">
-      <button class="btn" type="submit" value="Update Recipe">Update Recipe</button>
-    </div>
-  </form>
-  
-  <% if (recipe.owner._id.equals(user && user._id)) { %> 
-    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST"> 
-    <button class="delete btn" type="submit">delete recipe</button>
-    </form>
-<% } %> 
+        <div class="input-field col s12">
+          <button class="btn" type="submit" value="Update Recipe">Update Recipe</button>
+        </div>
+      </form>
+      <% if (recipe.owner._id.equals(user && user._id)) { %> 
+      <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST"> 
+        <button class="delete btn" type="submit">delete recipe</button>
+      </form>
+      <% } %> 
     </form>
     </div>
   </div>

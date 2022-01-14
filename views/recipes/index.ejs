@@ -2,15 +2,13 @@
 
 <div class="container">
   <h2 class="center">All Recipes</h2>
-    <div class="row">
-      <% recipes.forEach(function(r){ %>
-        <div class="col s12 m6">
-          <div class="card small blue-grey darken-1">
+  <div class="row">
+    <% recipes.forEach(function(r){ %>
+    <div class="col s12 m6">
+      <div class="card small blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title center"><%= r.title %></span>
-          <p class="center">
-            <%= r.description %>
-          </p>
+          <p class="center"><%= r.description %></p>
         </div>
 
         <div class="card-action">

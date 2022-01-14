@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <div class="container">
   <h2 class="center">Add a New Recipe</h2>
-
+  
   <div class="card blue-grey darken-1">
     <div class="card-content white-text">
       <form class="row" action="/recipes" method="POST">
@@ -26,12 +26,20 @@
         </div>
 
         <div class="input-field col s12">
-          <textarea name="ingredients" class="materialize-textarea" placeholder="Ingredients and measurements"></textarea>
+          <textarea
+            name="ingredients"
+            class="materialize-textarea"
+            placeholder="Ingredients and measurements"
+          ></textarea>
           <label for="ingredients">Ingredients:</label>
         </div>
 
         <div class="input-field col s12">
-          <textarea name="instructions" class="materialize-textarea" placeholder="Instructions"></textarea>
+          <textarea
+            name="instructions"
+            class="materialize-textarea"
+            placeholder="Instructions"
+          ></textarea>
           <label for="instructions">Instructions:</label>
         </div>
 

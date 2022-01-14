@@ -21,7 +21,7 @@ A place to share and access herbal recipes!
 
 ### Getting Started:
 
-Project Planning --> [Trello](https://trello.com/b/oKst2iWf/project-2) 
+Project Planning --> [Trello](https://trello.com/b/oKst2iWf/project-2)   
 Try it out --> [Herb Share](https://mighty-hollows-31782.herokuapp.com/)
 
 ### Next Steps:
@@ -30,5 +30,5 @@ Try it out --> [Herb Share](https://mighty-hollows-31782.herokuapp.com/)
 - User profiles 
 - Recipe categories 
 - Add photos to recipes 
-- Edit comments 
+- Edit/delete comments 
 - Like button

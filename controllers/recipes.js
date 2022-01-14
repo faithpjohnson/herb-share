@@ -26,26 +26,18 @@ function newRecipe(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user._id;
-
-  // log to see what user filled out
-  console.log(req.body);
-
   Recipe.create(req.body, function (err, recipeDocument) {
-    console.log(recipeDocument, "<recipeDocument");
-    console.log(err, "<ERROR");
-
     res.redirect("/recipes");
   });
 }
 
 function show(req, res) {
-  console.log(req.params, "<-- req.params in the show route");
-
   Recipe.findById(req.params.id, function (err, recipeDocument) {
     // Find all comments by recipeId
     // make sure to populate the user on all of the comments
     Recipe.findById(req.params.id)
-      .populate("comments.user").populate("owner")
+      .populate("comments.user")
+      .populate("owner")
       .exec(function (err, recipeDocument) {
         res.render("recipes/show", {
           title: "Recipe Detail",
@@ -60,10 +52,6 @@ function createComment(req, res) {
   Recipe.findById(req.params.id, function (err, recipe) {
     // update req.body to contain user info
     req.body.user = req.user._id;
-    // req.body.userName = req.user.name;
-
-    console.log(req.body, "<--- req.body");
-
     // add comment
     recipe.comments.push(req.body);
     recipe.save(function (err) {
@@ -77,11 +65,8 @@ function edit(req, res) {
     _id: req.params.id,
     owner: req.user._id,
   };
-  console.log("Args:", arguments);
-
   Recipe.findOne(arguments, function (err, recipe) {
     if (err || !recipe) {
-      console.log(err, recipe, "this is the error");
       return res.redirect("/recipes");
     }
     res.render("recipes/edit", {
@@ -92,7 +77,6 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  console.log("i'm updating");
   Recipe.findOneAndUpdate(
     {
       _id: req.params.id,
@@ -111,7 +95,6 @@ function update(req, res) {
 }
 
 function deleteRecipe(req, res) {
-  console.log("delete meeee", req.params.id);
   Recipe.findByIdAndDelete(req.params.id, function (err) {
     res.redirect("/recipes");
   });
