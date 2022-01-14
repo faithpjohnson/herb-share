@@ -7,10 +7,6 @@ const commentSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  date: {
-    type: Date,
-    default: Date.now,
-  },
 });
 
 const recipeSchema = new Schema(
@@ -35,10 +31,6 @@ const recipeSchema = new Schema(
     instructions: {
       type: String,
       required: true,
-    },
-    date: {
-      type: Date,
-      default: Date.now,
     },
     comments: [commentSchema],
   },
