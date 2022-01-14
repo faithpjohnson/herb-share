@@ -1,17 +1,19 @@
 * {
   box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+  left: 0.5rem;
 }
 
 body {
   background-image: url("https://i.imgur.com/ZDBopT0.jpg");
-  /* background-image: url("https://i.imgur.com/crcbFFz.jpg"); */
-  /* background-image: url("https://i.imgur.com/cKsYlk0.jpg"); */
   background-position: center bottom;
-
   background-size: cover;
   background-repeat: no-repeat;
-  /* height: 1000px; */
 }
 
 body > .container {
@@ -19,23 +21,34 @@ body > .container {
 }
 
 footer.page-footer {
-  margin-top: 80px;
-  background: rgba(237,239,236,0.5);
+  margin-top: 70px;
+  background: rgba(237, 239, 236, 0.8);
 }
+
+.page-footer {
+  padding-top: 0;
+}
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
+
 main {
   flex: 1 0 auto;
 }
-nav
-{
-	overflow: visible;
+
+nav {
+  overflow: visible;
 }
+
+.card{
+  border-radius: 15px;
+}
+
 nav li a {
-    -webkit-transition: background .3s ease-in-out;
-    -moz-transition: background .3s ease-in-out;
-    transition: background .3s ease-in-out;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }

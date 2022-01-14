@@ -6,7 +6,6 @@
     <div class="card-content white-text">
   <form class="row" action="/recipes/<%= recipe._id %> " method="POST">
 
-
     <div class="input-field col s6">
       <input
         value="<%= recipe.title %>"
@@ -38,19 +37,18 @@
     </div>
 
     <div class="input-field col s12">
-      <input class="btn" type="submit" value="Update Recipe" />
+      <button class="btn" type="submit" value="Update Recipe">Update Recipe</button>
     </div>
   </form>
   
   <% if (recipe.owner._id.equals(user && user._id)) { %> 
-    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+    <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST"> 
     <button class="delete btn" type="submit">delete recipe</button>
     </form>
 <% } %> 
-
-</form>
-</div>
-</div>
+    </form>
+    </div>
+  </div>
 </div>
 
 <%- include('../partials/footer') %>

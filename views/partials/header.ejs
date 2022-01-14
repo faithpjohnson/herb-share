@@ -13,53 +13,39 @@
       href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap"
       rel="stylesheet"
     />
-
     <!-- Materialize CSS Framework -->
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    
-    <link rel="stylesheet" href="/stylesheets/base.css" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <!-- JavaScript for Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>Document</title>
+    <title>Herb Share</title>
   </head>
   <body>
-    <div id="navbar" class="navbar-fixed scrollspy">
-      <nav class="white">
-        <div class="nav-wrapper container">
-          <div class="container left">
-            <a href="/" class="brand-logo">Herb Share</a>
-          </div>
-          <!-- <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a> -->
-  
-          <ul id="nav-mobile" class="right">
-            <li><a href="/recipes/new">Add a Recipe</a></li>
-            <li><a href="/recipes">All Recipes</a></li>
-            <li>
-              <% if (user) { %>
-              <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-              <% } else { %>
-              <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-              <% } %>
-            </li>
-          </ul>
-
-          <!-- <ul id="nav-mobile" class="right side-nav">
-            <li><a href="/recipes/new">Add a Recipe</a></li>
-            <li><a href="/recipes">All Recipes</a></li>
-            <li>
-              <% if (user) { %>
-              <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-              <% } else { %>
-              <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-              <% } %>
-            </li>
-          </ul> -->
-        </div>
-      </nav>
-    </div>
-    <main>
+    <nav class="white">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo left">Herb Share</a>
+        <ul id="nav-mobile" class="right">
+          <li><a href="/recipes/new">Add a Recipe</a></li>
+          <li><a href="/recipes">All Recipes</a></li>
+          <li>
+            <% if (user) { %>
+            <a href="/logout"
+              ><i class="material-icons left">trending_flat</i>Log Out</a
+            >
+            <% } else { %>
+            <a href="/auth/google"
+              ><i class="material-icons left">vpn_key</i>Login with Google</a
+            >
+            <% } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <main>

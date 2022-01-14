@@ -21,7 +21,6 @@ function index(req, res) {
 }
 
 function newRecipe(req, res) {
-  // console.log(req.user);
   res.render("recipes/new", { title: "Recipes New" });
 }
 
@@ -46,7 +45,7 @@ function show(req, res) {
     // Find all comments by recipeId
     // make sure to populate the user on all of the comments
     Recipe.findById(req.params.id)
-      .populate("comments.user")
+      .populate("comments.user").populate("owner")
       .exec(function (err, recipeDocument) {
         res.render("recipes/show", {
           title: "Recipe Detail",

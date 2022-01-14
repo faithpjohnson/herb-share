@@ -1,22 +1,19 @@
 <%- include('../partials/header') %>
-<div class="container">
-  <h2 id="all-recipes">All Recipes</h2>
 
-  <div class="row">
-    <% recipes.forEach(function(r){ %>
-    <div class="col s12 m6">
-      <div class="card small blue-grey darken-1">
+<div class="container">
+  <h2 class="center">All Recipes</h2>
+    <div class="row">
+      <% recipes.forEach(function(r){ %>
+        <div class="col s12 m6">
+          <div class="card small blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title"><%= r.title %></span>
-          <p>
-            I am a very simple card. I am good at containing small bits of
-            information. I am convenient because I require little markup to use
-            effectively.
+          <span class="card-title center"><%= r.title %></span>
+          <p class="center">
+            <%= r.description %>
           </p>
         </div>
 
         <div class="card-action">
-          <!-- <%= r.title %> -->
           <a href="/recipes/<%= r._id %>">DETAILS</a>
         </div>
       </div>
@@ -24,4 +21,5 @@
     <% }) %>
   </div>
 </div>
+
 <%- include('../partials/footer') %>
