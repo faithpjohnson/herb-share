@@ -16,9 +16,9 @@ A place to share and access herbal recipes!
 
 ### Technologies Used:
 
-- Node.js 
-- Express 
-- MongoDB 
+- MongoDB  
+- Express   
+- Node.js  
 - JavaScript 
 - EJS 
 - Google OAuth 
